@@ -1,6 +1,7 @@
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react'
-import { VitePWA } from "vite-plugin-pwa";
+import { VitePWA } from 'vite-plugin-pwa';
+
 // You have a typo in "includeAssests". It should be "includeAssets".
 const manifestForPlugIn = {
   registerType: 'prompt',
@@ -44,9 +45,6 @@ const manifestForPlugIn = {
   },
 };
 
-
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
-
-})
+  plugins: [react(), VitePWA(manifestForPlugIn)],
+});
